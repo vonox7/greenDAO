@@ -219,7 +219,8 @@ as property>\"${property.columnName}\"<#if property_has_next>,</#if></#list>);")
     }
      
     /** @inheritdoc */
-    @Override
+    // Suppress warnings to allow deprecated-annotations on setter functions
+    @SuppressWarnings("deprecation") @Override
     public void readEntity(Cursor cursor, ${entity.className} entity, int offset) {
 <#if entity.protobuf>
         throw new UnsupportedOperationException("Protobuf objects cannot be modified");
