@@ -73,6 +73,8 @@ public class Entity {
     private Boolean active;
     private Boolean hasKeepSections;
 
+    private String codeBeforeDelete;
+
     Entity(Schema schema, String className) {
         this.schema = schema;
         this.className = className;
@@ -461,6 +463,14 @@ public class Entity {
 
     public void setSuperclass(String classToExtend) {
         this.superclass = classToExtend;
+    }
+
+    public void setCodeBeforeDelete(String codeBeforeDelete) {
+        this.codeBeforeDelete = codeBeforeDelete;
+    }
+
+    public void setCodeBeforeUpdate(String codeBeforeUpdate) {
+        this.codeBeforeUpdate = codeBeforeUpdate;
     }
 
     void init2ndPass() {

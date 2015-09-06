@@ -238,6 +238,9 @@ property>${property.javaTypeInEntity} ${property.propertyName}<#if property_has_
 -->
 <#if entity.active>
     /** Convenient call for {@link AbstractDao#delete(Object)}. Entity must attached to an entity context. */
+    <#if entity.codeBeforeDelete ??>
+        ${entity.codeBeforeDelete}
+    </#if>
     public void delete() {
         if (myDao == null) {
             throw new DaoException("Entity is detached from DAO context");
@@ -246,6 +249,9 @@ property>${property.javaTypeInEntity} ${property.propertyName}<#if property_has_
     }
 
     /** Convenient call for {@link AbstractDao#update(Object)}. Entity must attached to an entity context. */
+    <#if entity.codeBeforeUpdate ??>
+        ${entity.codeBeforeUpdate}
+    </#if>
     public void update() {
         if (myDao == null) {
             throw new DaoException("Entity is detached from DAO context");
