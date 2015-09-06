@@ -111,6 +111,7 @@ property>${property.javaTypeInEntity} ${property.propertyName}<#if property_has_
 
 <#if entity.active>
     /** called by internal mechanisms, do not call yourself. */
+    @SuppressWarnings("deprecation") // Allow deprecation on getXxxDao()
     public void __setDaoSession(DaoSession daoSession) {
         this.daoSession = daoSession;
         myDao = daoSession != null ? daoSession.get${entity.classNameDao?cap_first}() : null;
@@ -146,6 +147,7 @@ property>${property.javaTypeInEntity} ${property.propertyName}<#if property_has_
 -->
 <#list entity.toOneRelations as toOne>
     /** To-one relationship, resolved on first access. */
+    @SuppressWarnings("deprecation") // Allow deprecation on getXxxDao()
     public ${toOne.targetEntity.className} get${toOne.name?cap_first}() {
 <#if toOne.useFkProperty>
         ${toOne.fkProperties[0].javaType} __key = this.${toOne.fkProperties[0].propertyName};

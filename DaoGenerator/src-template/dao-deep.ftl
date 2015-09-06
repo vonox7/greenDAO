@@ -20,6 +20,7 @@ along with greenDAO Generator.  If not, see <http://www.gnu.org/licenses/>.
 <#if entity.toOneRelations?has_content>
     private String selectDeep;
 
+    @SuppressWarnings("deprecation") // Allow deprecation on getXxxDao()
     protected String getSelectDeep() {
         if (selectDeep == null) {
             StringBuilder builder = new StringBuilder("SELECT ");
@@ -42,6 +43,7 @@ along with greenDAO Generator.  If not, see <http://www.gnu.org/licenses/>.
         return selectDeep;
     }
     
+    @SuppressWarnings("deprecation") // Allow deprecation on getXxxDao()
     protected ${entity.className} loadCurrentDeep(Cursor cursor, boolean lock) {
         ${entity.className} entity = loadCurrent(cursor, 0, lock);
         int offset = getAllColumns().length;
