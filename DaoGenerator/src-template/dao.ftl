@@ -123,7 +123,8 @@ as property>\"${property.columnName}\"<#if property_has_next>,</#if></#list>);")
 
 </#if>
     /** @inheritdoc */
-    @Override
+    // Suppress warnings to allow deprecated-annotations on getter functions
+    @SuppressWarnings("deprecation") @Override
     protected void bindValues(SQLiteStatement stmt, ${entity.className} entity) {
         stmt.clearBindings();
 <#list entity.properties as property>
