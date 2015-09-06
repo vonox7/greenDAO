@@ -73,6 +73,7 @@ public class Entity {
     private Boolean active;
     private Boolean hasKeepSections;
 
+    private String codeBeforeGetDao;
     private String codeBeforeDelete;
     private String codeBeforeUpdate;
 
@@ -466,12 +467,20 @@ public class Entity {
         this.superclass = classToExtend;
     }
 
+    public void setCodeBeforeGetDao(String codeBeforeGetDao) {
+        this.codeBeforeGetDao = codeBeforeGetDao;
+    }
+
     public void setCodeBeforeDelete(String codeBeforeDelete) {
         this.codeBeforeDelete = codeBeforeDelete;
     }
 
     public void setCodeBeforeUpdate(String codeBeforeUpdate) {
         this.codeBeforeUpdate = codeBeforeUpdate;
+    }
+
+    public String getCodeBeforeGetDao() {
+        return codeBeforeGetDao;
     }
 
     public String getCodeBeforeDelete() {

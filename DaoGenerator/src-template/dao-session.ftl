@@ -79,6 +79,9 @@ public class DaoSession extends AbstractDaoSession {
     }
 
 <#list schema.entities as entity>
+<#if entity.codeBeforeGetDao ??>
+    ${entity.codeBeforeGetDao}
+</#if>
     public ${entity.classNameDao} get${entity.classNameDao?cap_first}() {
         return ${entity.classNameDao?uncap_first};
     }
