@@ -474,6 +474,14 @@ public class Entity {
         this.codeBeforeUpdate = codeBeforeUpdate;
     }
 
+    public String getCodeBeforeDelete() {
+        return codeBeforeDelete;
+    }
+
+    public String getCodeBeforeUpdate() {
+        return codeBeforeUpdate;
+    }
+
     void init2ndPass() {
         init2ndPassNamesWithDefaults();
 
