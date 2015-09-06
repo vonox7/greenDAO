@@ -74,6 +74,7 @@ public class Entity {
     private Boolean hasKeepSections;
 
     private String codeBeforeDelete;
+    private String codeBeforeUpdate;
 
     Entity(Schema schema, String className) {
         this.schema = schema;
